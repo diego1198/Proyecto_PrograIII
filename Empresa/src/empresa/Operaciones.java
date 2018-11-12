@@ -11,19 +11,49 @@ package empresa;
  */
 public class Operaciones {
     private Ordenes pedidos;
+    private Empresas empresas;
+    private Clientes clientes;
 
     public Operaciones() {
         pedidos = new Ordenes();
+        empresas = new Empresas();
+        clientes = new Clientes();
     }
-    public void agregarPedido(HashPedidos ped,Persona per){
+    
+    //Seccion CRUD Pedidos y Ordenes
+    public void agregarPedido(HashPedidos ped,Persona per,ListaClientes clie){
         
-        pedidos.agregarPedido(ped,per);
+        pedidos.agregarPedido(ped,per,clie);
     }
     public void buscarPedido(HashPedidos ped,String cod){
         pedidos.mostrarPedido(ped, cod);
     }
+    public void actualizarPedido(HashPedidos ped){
     
+    }
+    public void eliminarPedido(HashPedidos ped){
     
+    }
+    
+    //'Seccion de CRUD Empresas
+    public void agregarEmpresa(ListaEmpresas emp){
+    }
+    
+    public void buscarEmpresa(ListaEmpresas emp){
+    }
+    
+    public void actualizarEmpresa(ListaEmpresas emp){
+    }
+    
+    public void eliminarEmpresa(ListaEmpresas emp){}
+    
+    //Seccion de CRUD Clientes
+    public void agregarCliente(ListaClientes clie){
+        clientes.ingresarCliente(clie);
+    }
+    public void buscarCliente(ListaClientes clie){}
+    public void actualizarCliente(ListaClientes clie){}
+    public void borarCliente(ListaClientes clie){}
     
     
 }

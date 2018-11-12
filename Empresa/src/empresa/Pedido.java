@@ -10,27 +10,65 @@ package empresa;
  * @author Diego Beltrán
  */
 public class Pedido {
-        private String Empresa;
+        private Empresa Empresa;
         private String Fecha;
         private String Descripcion;
         private Cliente client;
         private Persona employ;
+        private int calificacion;
+        private String comentario;
+        private String estado;
 
     public Pedido() {
-        Empresa = "Transportes Ecuador";
-        Fecha = "12/11/2018";
-        Descripcion="Entrega de encomienda";
-        client = new Cliente("123456", "Carolina", "Valle", "123456");
+        
+        
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+
+    public int getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
     
     
-    public String getEmpresa() {
+
+    public Empresa getEmpresa() {
         return Empresa;
     }
 
-    public void setEmpresa(String Empresa) {
+    public void setEmpresa(Empresa Empresa) {
         this.Empresa = Empresa;
     }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+    
+    
+    
 
     public String getFecha() {
         return Fecha;
@@ -66,7 +104,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido\n" + "Empresa=" + Empresa + ", Fecha=" + Fecha + ", Descripcion=" + Descripcion  + client.toString() + employ ;
+        return "Pedido\n" + "Empresa= " + Empresa + ", Fecha= " + Fecha + ", Descripcion= " + Descripcion  + client.toString() + employ ;
     }
 
     

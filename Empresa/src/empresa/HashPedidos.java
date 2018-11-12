@@ -7,6 +7,7 @@ package empresa;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.util.Map;
 public class HashPedidos {
         private Map<String,Pedido> pedidos;
         private static HashPedidos instance;
+        Scanner sc = new Scanner(System.in);
 
     public HashPedidos() {
         pedidos = new HashMap<>();
@@ -28,10 +30,14 @@ public class HashPedidos {
             return instance;
         }
         
-        public void agregarPedido(Persona empl){
+        public void agregarPedido(Persona empl,Persona cli){
+            String cod;
             Pedido ped = new Pedido();
             ped.setEmploy(empl);
-            pedidos.put("HC-01", ped);
+            ped.setClient((Cliente)cli);
+            System.out.println("Ingrese el codigo del Pedido");
+            cod=sc.next();
+            pedidos.put(cod, ped);
         }
         public void buscarPedido(String cod){
             if(pedidos.containsKey(cod)){

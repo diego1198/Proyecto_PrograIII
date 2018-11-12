@@ -50,7 +50,7 @@ public class Empleado extends Persona{
 
     @Override
     public String toString() {
-        return  "\nEmpleado ID= " + ID + ", cargo= " + cargo + ", Horario= " + Horario  + " "+getCI() +" "+ getNombre();
+        return  "\nEmpleado\n ID= " + ID + ", cargo= " + cargo + ", Horario= " + Horario  + " "+getCI() +" "+ getNombre();
     }
 
     

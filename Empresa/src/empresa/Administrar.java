@@ -17,7 +17,7 @@ public class Administrar {
         Operaciones oper = new Operaciones();
         Persona per = new Persona();
         String cod;
-        public void Empleado(String ID,ListaEmpleados list1,HashPedidos pedidos){
+        public void Empleado(String ID,ListaEmpleados list1,HashPedidos pedidos,ListaClientes clie){
             int op;
             do{
             System.out.println("1.-Ingresar nuevo pedido: ");
@@ -29,7 +29,7 @@ public class Administrar {
             switch(op){
                 case 1:{
                     per = list1.buscarPersona(ID);
-                    oper.agregarPedido(pedidos,per);
+                    oper.agregarPedido(pedidos,per,clie);
                 }break;
                 case 2:{
                     System.out.println("Aqui podra buscar un pedido");
@@ -64,7 +64,27 @@ public class Administrar {
         }
         
         
-        public void Cliente(){}
+        public void Cliente(String ID,ListaClientes list1,HashPedidos pedidos,ListaClientes clie){
+        int op;
+            do{
+            System.out.println("1.-Ingresar nuevo pedido: ");
+            System.out.println("2.-Buscar pedido");
+            System.out.println("3.-Cerrar Sesion");
+            op=sc.nextInt();
+            switch(op){
+                case 1:{
+                per = list1.buscarPersona(ID);
+               oper.agregarPedido(pedidos,per,clie);
+                }break;
+                case 2:{
+                    System.out.println("Aqui podra buscar un pedido");
+                    System.out.println("Ingrese el codigo del pedido:");
+                    cod = sc.next();
+                    oper.buscarPedido(pedidos,cod);
+                }break;
+            }
+            }while(op!=3);
+        }
         
     
 }
