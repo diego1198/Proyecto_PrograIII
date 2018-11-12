@@ -28,4 +28,15 @@ public class HashPedidos {
             return instance;
         }
         
+        public void agregarPedido(Persona empl){
+            Pedido ped = new Pedido();
+            ped.setEmploy(empl);
+            pedidos.put("HC-01", ped);
+        }
+        public void buscarPedido(String cod){
+            if(pedidos.containsKey(cod)){
+                System.out.println(pedidos.get(cod).toString());
+            }
+        }
+        
 }

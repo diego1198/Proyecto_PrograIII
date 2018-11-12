@@ -29,9 +29,7 @@ public class ListaEmpleados {
         return instance;
         
     }
-    public void ingresarPedido(int pos,HashPedidos pedidos){
-        listEmpleado.get(pos).agregarPedido(pedidos);
-    }
+    
     public int buscarEmpleado(String ID){
         int pos=0;
         for(int i=0;i<listEmpleado.size();i++){
@@ -44,6 +42,18 @@ public class ListaEmpleados {
         int pos=-1;
         for(int i=0;i<listEmpleado.size();i++){
             if(listEmpleado.get(i).getCI().equals(ci)&&listEmpleado.get(i).getContrasena().equals(pass)){
+                pos=i;
+            }
+        }
+        if(pos==-1){
+            return null;
+        }
+        return listEmpleado.get(pos);
+    }
+    public Persona buscarPersona(String CI){
+    int pos=-1;
+        for(int i=0;i<listEmpleado.size();i++){
+            if(listEmpleado.get(i).getCI().equals(CI)){
                 pos=i;
             }
         }

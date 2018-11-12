@@ -15,9 +15,14 @@ public class Operaciones {
     public Operaciones() {
         pedidos = new Ordenes();
     }
-    public void agregarPedido(HashPedidos ped){
-        pedidos.agregarPedido(ped);
+    public void agregarPedido(HashPedidos ped,Persona per){
+        
+        pedidos.agregarPedido(ped,per);
     }
+    public void buscarPedido(HashPedidos ped,String cod){
+        pedidos.mostrarPedido(ped, cod);
+    }
+    
     
     
     

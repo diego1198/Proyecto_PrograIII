@@ -18,6 +18,7 @@ public class ListaAdministradores {
     
     public ListaAdministradores(){
         listAdministrador = new ArrayList<>();
+        listAdministrador.add(new Administrador("1234", "Ventas", "123456", "Juan", "Valle", "123456"));
     }
     public static ListaAdministradores getInstance(){
         if(instance==null)

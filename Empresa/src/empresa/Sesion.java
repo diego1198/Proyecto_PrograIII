@@ -21,18 +21,23 @@ public class Sesion {
     HashPedidos pedidos = HashPedidos.getInstance();
     public void iniciarSesion(){
         String CI,pass;
+        String op="";
         Empleado aux1;
+        
+        while(true){
         System.out.println("Ingrese su CI");
         CI=sc.next();
         System.out.println("Ingrese su contraseña:");
         pass = sc.next();
         
         if(buscarUsuario(CI, pass) instanceof Empleado){
+            System.out.println("Usted es un empleado");
         aux1 = (Empleado)buscarUsuario(CI, pass);
             //System.out.println(aux1.toString());
-            admin.agregarPedidos(CI, list1, pedidos);
+            admin.Empleado(CI, list1, pedidos);
         }else if(buscarUsuario(CI, pass) instanceof Administrador){
             System.out.println("Usted es un administrador");
+            admin.Administrador(CI, list2, pedidos);
         }else if(buscarUsuario(CI, pass) instanceof Cliente)
         {
             System.out.println("Usted es un cliente");
@@ -40,7 +45,7 @@ public class Sesion {
             System.out.println("Usuario no encontrado");
         }
             
-        
+        }
     }
 
     public Persona buscarUsuario(String ci, String pass){

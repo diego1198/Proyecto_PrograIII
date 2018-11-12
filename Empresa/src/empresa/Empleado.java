@@ -50,13 +50,9 @@ public class Empleado extends Persona{
 
     @Override
     public String toString() {
-        return "Empleado{" + "ID=" + ID + ", cargo=" + cargo + ", Horario=" + Horario  + getCI() +" "+ getNombre();
+        return  "\nEmpleado ID= " + ID + ", cargo= " + cargo + ", Horario= " + Horario  + " "+getCI() +" "+ getNombre();
     }
-    
-    
-    public void agregarPedido(HashPedidos ped){
-        oper.agregarPedido(ped);
-    }
+
     
     
     
